@@ -1,7 +1,3 @@
-"""
-Field extraction using OpenAI GPT
-"""
-
 import openai
 import json
 import re
@@ -12,13 +8,10 @@ class FieldExtractor:
                 self.client = openai.OpenAI(api_key=api_key)
     
     def extract_fields(self, document_content):
-        """Extract structured fields from document content using GPT"""
         
         text = document_content.get('text', '')
         if not text:
             return self._get_empty_fields()
-        
-        # Limit text length to avoid token limits
         if len(text) > 8000:
             text = text[:8000] + "..."
         
@@ -44,7 +37,6 @@ class FieldExtractor:
             return self._get_empty_fields()
     
     def _get_system_prompt(self):
-        """System prompt for GPT"""
         return """You are helping extract information from RFP documents. 
         
 Extract the following information and return it as JSON:
@@ -68,11 +60,8 @@ Extract the following information and return it as JSON:
 - company_name: Issuing company/organization
 - bid_summary: Brief summary
 - product_specification: Technical specs
-
-Return ONLY valid JSON. Use null for missing information."""
     
     def _parse_gpt_response(self, content):
-        """Parse GPT response into structured data"""
         try:
             # Try to find JSON in the response
             json_start = content.find('{')
@@ -90,7 +79,6 @@ Return ONLY valid JSON. Use null for missing information."""
             return self._extract_with_regex(content)
     
     def _extract_with_regex(self, content):
-        """Fallback extraction using regex patterns"""
         fields = self._get_empty_fields()
         
         # Simple regex patterns for common fields
@@ -109,7 +97,6 @@ Return ONLY valid JSON. Use null for missing information."""
         return fields
     
     def _get_empty_fields(self):
-        """Return empty field structure"""
         return {
             "bid_number": None,
             "title": None,
