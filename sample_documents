@@ -8,11 +8,6 @@ This folder contains RFP documents for processing.
 2. Supported formats: `.pdf`, `.html`, `.htm`
 3. The processor will automatically detect and parse these files
 
-## Example Structure
-
-sample_documents/ ├── dallas_isd_rfp.pdf ├── maryland_porfp.pdf ├── addendum_1.pdf |- specifications.html
-
-
 ## Note
 
 For testing purposes, you can add any RFP documents you want to process. The system will extract structured information from them.
