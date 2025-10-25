@@ -1,9 +1,3 @@
-"""
-RFP Document Processing System
-Student: [Your Name]
-Assignment: Extract structured data from RFP documents
-"""
-
 import json
 import os
 from datetime import datetime
@@ -20,7 +14,6 @@ class RFPProcessor:
         self.output_gen = OutputGenerator()
         
     def process_documents(self, file_paths):
-        """Process multiple RFP documents and extract structured data"""
         results = {}
         
         print("Starting RFP document processing...")
