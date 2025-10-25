@@ -1,7 +1,3 @@
-"""
-Configuration settings for RFP processor
-"""
-
 import os
 from dotenv import load_dotenv
 
@@ -9,11 +5,8 @@ load_dotenv()
 
 class Config:
     def __init__(self):
-        # API Configuration
         self.openai_api_key = os.getenv('OPENAI_API_KEY', 'your-api-key-here')
         self.openai_model = os.getenv('OPENAI_MODEL', 'gpt-3.5-turbo')
-        
-        # Target fields to extract
         self.target_fields = [
             "bid_number", "title", "due_date", "bid_submission_type",
             "term_of_bid", "pre_bid_meeting", "installation", 
@@ -36,7 +29,7 @@ class Config:
         # Supported file formats
         self.supported_formats = ['.pdf', '.html', '.htm']
         
-        # Validation patterns (regex)
+        # Validation patterns
         self.validation_patterns = {
             'email': r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}',
             'phone': r'\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}',
@@ -53,7 +46,6 @@ class Config:
         self.retry_delay = 2  # seconds
         
     def validate(self):
-        """Validate configuration settings"""
         if not self.openai_api_key or self.openai_api_key == 'your-api-key-here':
             raise ValueError("OpenAI API key not configured. Please set OPENAI_API_KEY in .env file")
         
@@ -64,7 +56,6 @@ class Config:
         return True
     
     def get_field_description(self, field_name):
-        """Get human-readable description for each field"""
         descriptions = {
             "bid_number": "RFP/Bid identification number",
             "title": "Document title or project name",
