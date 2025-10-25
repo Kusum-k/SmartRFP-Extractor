@@ -1,1 +1,22 @@
 
+# Output Directory
+
+Extracted data will be saved here in JSON format.
+
+## Output Format
+```json
+{
+  "metadata": {
+    "processed_at": "2024-10-25T10:30:00",
+    "total_documents": 2
+  },
+  "documents": {
+    "document_name.pdf": {
+      "extracted_fields": {
+        "bid_number": "RFP-12345",
+        "title": "Document Title",
+        ...
+      }
+    }
+  }
+}
