@@ -1,19 +1,8 @@
-
----
-
-### **4. run_example.py** (Simple example script)
-```python
-"""
-Example script showing how to use the RFP processor
-"""
-
 from main import RFPProcessor
 import os
 
 def run_example():
-    """Run a simple example"""
-    
-    print("=" * 50)
+     print("=" * 50)
     print("RFP Document Processor - Example")
     print("=" * 50)
     
