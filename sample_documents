@@ -1,0 +1,27 @@
+# Sample Documents
+
+This folder contains RFP documents for processing.
+
+## Instructions
+
+1. Place your PDF or HTML files here
+2. Supported formats: `.pdf`, `.html`, `.htm`
+3. The processor will automatically detect and parse these files
+
+## Example Structure
+
+sample_documents/ ├── dallas_isd_rfp.pdf ├── maryland_porfp.pdf ├── addendum_1.pdf └── specifications.html
+
+
+## Note
+
+For testing purposes, you can add any RFP documents you want to process. The system will extract structured information from them.
+
+## Sample Documents Used in This Project
+
+- Dallas ISD RFP documents (Addendums 1 & 2)
+- Maryland State PORFP documents
+- Technical specification sheets
+
+*Note: Actual documents are not included in the repository due to size/privacy concerns.*
+
