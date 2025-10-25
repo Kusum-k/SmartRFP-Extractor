@@ -1,7 +1,3 @@
-"""
-Generate JSON output from extracted data
-"""
-
 import json
 import os
 from datetime import datetime
